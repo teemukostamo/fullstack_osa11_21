@@ -1,0 +1,23 @@
+{
+  "name": "dpkg-status",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:ui": "rm -rf client/build && cd client && npm run build && cp -r build ../server",
+    "deploy": "git push heroku master",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
+    "start": "node server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon server"
+  },
+  "author": "Teemu Kostamo",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
