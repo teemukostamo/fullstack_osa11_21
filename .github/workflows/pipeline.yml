@@ -28,5 +28,5 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           command: cd client && npm run test
-          start: npm run start
+          start: npm start
           wait-on: http://localhost:5000
