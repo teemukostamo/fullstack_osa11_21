@@ -36,6 +36,7 @@ const getPackageDictionary = async (filePath) => {
 
     return packageDictionary;
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.log(error);
   }
 };
@@ -59,7 +60,7 @@ const parseName = (text) => {
   if (matches && matches[1]) {
     return matches[1];
   }
-  throw new Error(`Key "Package" not found`);
+  throw new Error('Key "Package" not found');
 };
 
 const parseDescription = (text) => {
@@ -67,7 +68,7 @@ const parseDescription = (text) => {
   if (matches && matches[1]) {
     return matches[1];
   }
-  throw new Error(`Key "Description" not found`);
+  throw new Error('Key "Description" not found');
 };
 
 const parseDependencies = (text) => {
