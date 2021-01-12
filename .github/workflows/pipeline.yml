@@ -21,7 +21,7 @@ jobs:
       - name: npm install client deps
         run: cd client && npm install
       - name: lint
-        run: npm run eslint
+        run: npm run lint
       - name: build
         run: npm run build
       - name: e2e tests
