@@ -1,0 +1,21 @@
+name: Health check
+
+on:
+  schedule:
+    - cron: '0 14 * * *'
+# on:
+#   push:
+#     branches:
+#       - master
+
+jobs:
+  health-check:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Check the deployed service URL
+        uses: jtalk/url-health-check-action@v1.2
+        with:
+          url: https://boiling-escarpment-70015.herokuapp.com/health
+          follow-redirect: no
+          max-attempts: 3
+          retry-delay: 60s
