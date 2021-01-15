@@ -26,10 +26,6 @@ app.get('/api/packages', async (req, res) => {
   res.json(packageDictionary);
 });
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.resolve(`${__dirname}/build/index.html`));
-});
-
 app.get('/health', (req, res) => {
   res.send('ok');
 });
